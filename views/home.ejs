@@ -16,6 +16,7 @@
         <h1 id="heading">TODO App</h1>
     </head>
     <main>
+        
         <div id="description">
             <div class="heading-2">
                 DESCRIPTION
@@ -49,7 +50,7 @@
             </div>
         </div>
         <div id="tasks-btn-container">
-            <a href="">
+            <a href="/add" method = 'POST'>
                 <div id="add" class="btn">
                     <i class="fa fa-plus"></i>
                     <span>Add Task</span>
@@ -65,7 +66,16 @@
 
         <div id="list">
             <ul>
-                
+                <% for(let i of tasks_list){%>
+                    <li class="contact">
+                        <div class="details">
+                            <p class="1"><%= i.desc%></p>
+                            <p class="2"><%= i.cat%></p>
+                            <p class="2"><%= i.due%></p>
+                        </div>
+                        
+                    </li>
+                <%}%>
     
             </ul>
         </div>
