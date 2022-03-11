@@ -7,8 +7,68 @@
     <title>
         <%= title%>
     </title>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Fasten-up/<%= title%></h1>
+    <head >
+        <h1 id="heading">TODO App</h1>
+    </head>
+    <main>
+        <div id="description">
+            <div class="heading-2">
+                DESCRIPTION
+            </div>
+            <div>
+                <input type="text" name="desc" id="desc" required placeholder="What do you need to do?">
+            </div>
+        </div>
+        <div id="container">
+            <div id ="item-1" class="item">
+                <div class="heading-2">
+                    CATEGORY
+                </div>
+                <div>
+                    <select name="catagory" id="work-type">
+                        <option value="none" selected disabled hidden>Select a Category</option>
+                        <option value="School">School</option>
+                        <option value="Personal">Personal</option>
+                        <option value="Work">Work</option>
+                        <option value="College">College</option>
+                    </select>
+                </div>
+            </div>
+            <div id ="item-2" class="item">
+                <div class="heading-2">
+                    DUE DATE
+                </div>
+                <div>
+                    <input type="date" name="date" id="due-date" required>
+                </div>
+            </div>
+        </div>
+        <div id="tasks-btn-container">
+            <a href="">
+                <div id="add" class="btn">
+                    <i class="fa fa-plus"></i>
+                    <span>Add Task</span>
+                </div>
+            </a>
+            <a href="">
+                <div id="delete" class="btn">
+                    <i class="fa fa-trash"></i>
+                    <span>Delete Task</span>
+                </div>
+            </a>
+        </div>
+
+        <div id="list">
+            <ul>
+                
+    
+            </ul>
+        </div>
+    </main>
 </body>
 </html>
