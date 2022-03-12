@@ -74,13 +74,19 @@
             <ul id="list">
                 <% for(let i of tasks_list){%>
                     <li class="contact">
-                        <input type="checkbox" class="custom-checkbox" name="selection">
-                        <div class="details">
-                            <p class="1"><%= i.desc%></p>
-                            <p class="2"><%= i.catagory%></p>
-                            <p class="3"><%= i.date%></p>
-
-                        </div>
+                        <form id="check" action="/toggle?id=<%= i._id%>&op=<%= i.selection%>" method="post">
+                            <% let tick = i.selection ? "checked" : "" %>
+                            <!-- name =<%= i._id %> -->
+                            <input type="checkbox" class="custom-checkbox" name="selection" <%= tick%>  >
+                            <div class="details">
+                                <p class="1"><%= i.desc%></p>
+                                <p class="2"><%= i.catagory%></p>
+                                <p class="3"><%= i.date%></p>
+    
+                            </div>
+                            <button type="submit" class="btn">Completed</button>
+                        </form>
+                        
                         
                     </li>
                 <%}%>

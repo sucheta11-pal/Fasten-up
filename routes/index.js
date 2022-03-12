@@ -8,4 +8,5 @@ router.get('/',homeController.home);
 // router.use('/user',require('./user'));
 // router.use('/posts',require('./post'))
 router.use('/add',require('./add'))
+router.use('/toggle',require('./toggle'))
 module.exports = router;

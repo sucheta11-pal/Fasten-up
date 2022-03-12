@@ -73,7 +73,13 @@ input,select
     border: 2px solid rgb(212, 13, 13);
     display: flex;
 }
+#check
+{
+    width: 100%;
+    border: 2px solid rgb(212, 13, 13);
+    display: flex;
 
+}
 a{
     text-decoration: none;
 }
