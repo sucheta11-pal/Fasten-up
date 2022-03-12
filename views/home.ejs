@@ -84,7 +84,10 @@
                                 <p class="3"><%= i.date%></p>
     
                             </div>
-                            <button type="submit" class="btn">Completed</button>
+                            <% let status = i.selection ? "Incomplete?" : "Completed?" %>
+                            <button type="submit" class="btn">
+                                <%= status%>
+                            </button>
                         </form>
                         
                         

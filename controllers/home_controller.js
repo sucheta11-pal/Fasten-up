@@ -12,11 +12,11 @@ module.exports.home = (req,res)=>{
             return;
         }
         console.log(task);
-       
         
             return res.render('home',{
                 title:'Home',
-                tasks_list:task
+                tasks_list:task,
+                
             });
         
         
