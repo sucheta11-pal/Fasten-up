@@ -1,10 +1,13 @@
 const Tasks = require('../models/todo');
 
 module.exports.addition = (req,res)=>{
+    console.log('hello')
+    console.log(req.body);
+    // return res.end('bvn');
     Tasks.create({
         desc:req.body.desc,
-        cat:req.body.cat,
-        due: req.body.due
+        catagory:req.body.catagory,
+        date: req.body.date
     },(err,newTaskList)=>{
         if(err)
         {

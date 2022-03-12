@@ -11,9 +11,15 @@ module.exports.home = (req,res)=>{
             console.log('Error in fetching contacts');
             return;
         }
-        return res.render('home',{
-            title:'Home',
-            tasks_list:task
-        });
+        console.log(task);
+       
+        
+            return res.render('home',{
+                title:'Home',
+                tasks_list:task
+            });
+        
+        
+        
     })
 }

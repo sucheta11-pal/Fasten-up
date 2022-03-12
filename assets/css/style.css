@@ -3,6 +3,7 @@ body
     margin: 0;
     font-family: 'Luckiest Guy', cursive;
     color: #570c0c;
+    /* background-color: orange; */
 }
 #heading
 {
@@ -45,9 +46,8 @@ input,select
     border: 2px solid pink;
     width: 48%;
 }
-#tasks-btn-container
+.tasks-btn-container
 {
-    /* border: 2px solid red; */
     display: flex;
     justify-content: center;
 }

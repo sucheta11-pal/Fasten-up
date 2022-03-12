@@ -17,52 +17,59 @@
     </head>
     <main>
         
-        <div id="description">
-            <div class="heading-2">
-                DESCRIPTION
-            </div>
-            <div>
-                <input type="text" name="desc" id="desc" required placeholder="What do you need to do?">
-            </div>
-        </div>
-        <div id="container">
-            <div id ="item-1" class="item">
+        <form method="post" action="/add">
+            <div id="description">
                 <div class="heading-2">
-                    CATEGORY
+                    DESCRIPTION
                 </div>
                 <div>
-                    <select name="catagory" id="work-type">
-                        <option value="none" selected disabled hidden>Select a Category</option>
-                        <option value="School">School</option>
-                        <option value="Personal">Personal</option>
-                        <option value="Work">Work</option>
-                        <option value="College">College</option>
-                    </select>
+                    <input type="text" name="desc" id="desc" required placeholder="What do you need to do?">
                 </div>
             </div>
-            <div id ="item-2" class="item">
-                <div class="heading-2">
-                    DUE DATE
+            <div id="container">
+                <div id ="item-1" class="item">
+                    <div class="heading-2">
+                        CATEGORY
+                    </div>
+                    <div>
+                        <select name="catagory" id="work-type">
+                            <option value="none" selected disabled hidden>Select a Category</option>
+                            <option value="School">School</option>
+                            <option value="Personal">Personal</option>
+                            <option value="Work">Work</option>
+                            <option value="College">College</option>
+                        </select>
+                    </div>
                 </div>
-                <div>
-                    <input type="date" name="date" id="due-date" required>
+                <div id ="item-2" class="item">
+                    <div class="heading-2">
+                        DUE DATE
+                    </div>
+                    <div>
+                        <input type="date" name="date" id="due-date" required>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div id="tasks-btn-container">
-            <a href="/add" method = 'POST'>
+            <!-- <button type="submit">
+                Add
+            </button> -->
+        </form>
+        <div class="tasks-btn-container">
+            <button type="submit">
                 <div id="add" class="btn">
                     <i class="fa fa-plus"></i>
                     <span>Add Task</span>
                 </div>
-            </a>
+            </button> 
+                
+            
             <a href="">
                 <div id="delete" class="btn">
                     <i class="fa fa-trash"></i>
                     <span>Delete Task</span>
                 </div>
             </a>
-        </div>
+        </div> 
 
         <div id="list">
             <ul>
@@ -70,8 +77,8 @@
                     <li class="contact">
                         <div class="details">
                             <p class="1"><%= i.desc%></p>
-                            <p class="2"><%= i.cat%></p>
-                            <p class="2"><%= i.due%></p>
+                            <p class="2"><%= i.catagory%></p>
+                            <p class="3"><%= i.date%></p>
                         </div>
                         
                     </li>

@@ -5,11 +5,11 @@ const taskList = new mongoose.Schema({
         required:true
     },
 
-    cat:{
+    catagory:{
         type:String
     },
 
-    due:{
+    date:{
         type:Date,
         required:true
     }
