@@ -50,35 +50,36 @@
                     </div>
                 </div>
             </div>
-            <!-- <button type="submit">
-                Add
-            </button> -->
-        </form>
-        <div class="tasks-btn-container">
-            <button type="submit">
-                <div id="add" class="btn">
-                    <i class="fa fa-plus"></i>
-                    <span>Add Task</span>
-                </div>
-            </button> 
-                
             
-            <a href="">
-                <div id="delete" class="btn">
-                    <i class="fa fa-trash"></i>
-                    <span>Delete Task</span>
-                </div>
-            </a>
-        </div> 
+            <div class="tasks-btn-container">
+                <button type="submit"id="add" class="btn">
+                    
+                        <i class="fa fa-plus"></i>
+                        <span>Add Task</span>
+                   
+                </button> 
+                    
+                
+                <a href="">
+                    <div id="delete" class="btn">
+                        <i class="fa fa-trash"></i>
+                        <span>Delete Task</span>
+                    </div>
+                </a>
+            </div> 
+        </form>
+        
 
-        <div id="list">
-            <ul>
+        <div id="list-container">
+            <ul id="list">
                 <% for(let i of tasks_list){%>
                     <li class="contact">
+                        <input type="checkbox" class="custom-checkbox" name="selection">
                         <div class="details">
                             <p class="1"><%= i.desc%></p>
                             <p class="2"><%= i.catagory%></p>
                             <p class="3"><%= i.date%></p>
+
                         </div>
                         
                     </li>

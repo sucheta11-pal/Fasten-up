@@ -12,6 +12,11 @@ const taskList = new mongoose.Schema({
     date:{
         type:Date,
         required:true
+    },
+    selection:{
+        type:String,
+        required:true,
+        default:"unchecked"
     }
 
 });

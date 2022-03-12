@@ -52,9 +52,26 @@ input,select
     justify-content: center;
 }
 
-#list
+#list-container
 {
     border: 2px solid orange;
+}
+
+#list
+{
+    list-style-type: none;
+    border: 5px solid pink ;
+}
+
+.contact
+{
+    border: 5px solid black;
+    display: flex;
+}
+.details
+{
+    border: 2px solid rgb(212, 13, 13);
+    display: flex;
 }
 
 a{
