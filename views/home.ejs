@@ -60,7 +60,7 @@
                 </button> 
                     
                 
-                <a href="">
+                <a href="/delete-task">
                     <div id="delete" class="btn">
                         <i class="fa fa-trash"></i>
                         <span>Delete Task</span>
@@ -76,7 +76,7 @@
                     <li class="contact">
                         <form id="check" action="/toggle?id=<%= i._id%>&op=<%= i.selection%>" method="post">
                             <% let tick = i.selection ? "checked" : "" %>
-                            <!-- name =<%= i._id %> -->
+                           
                             <input type="checkbox" class="custom-checkbox" name="selection" <%= tick%>  >
                             <div class="details">
                                 <p class="1"><%= i.desc%></p>

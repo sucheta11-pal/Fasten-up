@@ -1,8 +1,8 @@
 body
 {
     margin: 0;
-    font-family: 'Luckiest Guy', cursive;
     color: #570c0c;
+    font-family: cursive;
     /* background-color: orange; */
 }
 #heading
@@ -70,8 +70,14 @@ input,select
 }
 .details
 {
-    border: 2px solid rgb(212, 13, 13);
+    border: 5px solid rgb(212, 13, 13);
     display: flex;
+}
+.custom-checkbox:checked +.details
+{
+    text-decoration: line-through;
+    color: purple;
+    background-color: yellow;
 }
 #check
 {
