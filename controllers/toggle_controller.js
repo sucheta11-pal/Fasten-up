@@ -10,11 +10,11 @@ module.exports.toggle = (req,res)=>{
     if(ans=='false')
     {
         ans=true;
-        status = 'Incomplete?';
+        
     }
     else{
         ans=false;
-        status = 'Completed?';
+        
 
     }
     Tasks.findByIdAndUpdate(id, {selection: ans},function (err, docs) {

@@ -8,10 +8,11 @@ module.exports.home = (req,res)=>{
     Tasks.find({},(err,task)=>{
         if(err)
         {
-            console.log('Error in fetching contacts');
+            console.log('Error in fetching tasks');
             return;
         }
         console.log(task);
+        
         
             return res.render('home',{
                 title:'Home',

@@ -57,20 +57,12 @@
                         <i class="fa fa-plus"></i>
                         <span>Add Task</span>
                    
-                </button> 
-                    
-                
-                <a href="/delete-task">
-                    <div id="delete" class="btn">
-                        <i class="fa fa-trash"></i>
-                        <span>Delete Task</span>
-                    </div>
-                </a>
+                </button>  
             </div> 
         </form>
-        
 
         <div id="list-container">
+            
             <ul id="list">
                 <% for(let i of tasks_list){%>
                     <li class="contact">
@@ -84,7 +76,7 @@
                                 <p class="3"><%= i.date%></p>
     
                             </div>
-                            <% let status = i.selection ? "Incomplete?" : "Completed?" %>
+                            <% let status = i.selection ? "Completed!" : "Incomplete" %>
                             <button type="submit" class="btn">
                                 <%= status%>
                             </button>
@@ -95,7 +87,19 @@
                 <%}%>
     
             </ul>
+        
         </div>
+
+        <div class="tasks-btn-container">
+            <form action="/delete-task">
+                <button type="submit"id="delete" class="btn">
+                    <i class="fa fa-trash"></i>
+                    <span>Delete Task</span>
+                </button> 
+            </form>
+        </div>
+
+        
     </main>
 </body>
 </html>
