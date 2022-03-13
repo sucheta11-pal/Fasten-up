@@ -5,17 +5,15 @@ module.exports.toggle = (req,res)=>{
     let id = req.query.id;
     console.log(id)
     let ans = req.query.op;
-    let status;
     console.log(ans);
     if(ans=='false')
     {
         ans=true;
         
     }
-    else{
+    else
+    {
         ans=false;
-        
-
     }
     Tasks.findByIdAndUpdate(id, {selection: ans},function (err, docs) {
     if (err){
