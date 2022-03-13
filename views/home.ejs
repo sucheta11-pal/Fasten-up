@@ -69,7 +69,7 @@
                         <form id="check" action="/toggle?id=<%= i._id%>&op=<%= i.selection%>" method="post">
                             <% let tick = i.selection ? "checked" : "" %>
                            
-                            <input type="checkbox" class="custom-checkbox" name="selection" <%= tick%>  >
+                            <input type="checkbox" class="custom-checkbox" onclick="toggle(`<%=i._id%>`,`<%=i.selection%>`);" name="selection" <%= tick%> >
                             <div class="details">
                                 <p class="1"><%= i.desc%></p>
                                 <p class="2"><%= i.catagory%></p>
@@ -101,5 +101,6 @@
 
         
     </main>
+    <script src="/js/toggle.js"></script>
 </body>
 </html>
