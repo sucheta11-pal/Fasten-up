@@ -69,8 +69,10 @@ input,select
 }
 .details
 {
-    border: 5px solid rgb(212, 13, 13);
+    /* border: 5px solid rgb(212, 13, 13); */
     display: flex;
+    width: 100%;
+    justify-content: center;
 }
 .style-1
 {
@@ -78,11 +80,16 @@ input,select
 }
 .style-2
 {
-    border: 5px solid rgb(13, 66, 212);
+    /* border: 5px solid rgb(13, 66, 212); */
+    padding: 2%;
 }
 .style-3
 {
     border: 5px solid rgb(13, 66, 212);
+}
+.custom-checkbox
+{
+    margin: auto;
 }
 .custom-checkbox:checked +.details
 {
@@ -120,5 +127,15 @@ a{
    color: #fff;
    text-decoration: none;
  }
+ .bttn {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
 
  

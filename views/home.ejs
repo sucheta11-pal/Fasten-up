@@ -72,17 +72,15 @@
                             <input type="checkbox" class="custom-checkbox" onclick="toggle(`<%=i._id%>`,`<%=i.selection%>`);" name="selection" <%= tick%> >
                             <div class="details">
                                 <p class="style-1"><%= i.desc%></p>
-                                <p class="style-2"><%= i.catagory%></p>
                                 <p class="style-3"><%= i.date%></p>
     
                             </div>
-                            <% let status = i.selection ? "Completed!" : "Incomplete" %>
-                            <button type="submit" class="btn">
-                                <%= status%>
-                            </button>
-                        </form>
-                        
-                        
+                            <div class="details">
+                            
+                                <p class="style-2 bttn" ><%= i.category%></p>
+                            </div>
+                           
+                        </form> 
                     </li>
                 <%}%>
     
