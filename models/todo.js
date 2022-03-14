@@ -6,7 +6,8 @@ const taskList = new mongoose.Schema({
     },
 
     catagory:{
-        type:String
+        type:String,
+        default:"0"
     },
 
     date:{

@@ -1,0 +1,20 @@
+body{
+    background-image: linear-gradient(to right,#6e0001, #c89e23 , #194328,#585858,#f2cd00,#361e1e,#0d193d,#8c662b);
+    font-family: 'Harry Potter', sans-serif;
+}
+
+.shop-name
+{
+    text-align: center;
+    font-size: 50px;
+    text-shadow: 2px 2px 5px rgb(211, 201, 201);
+    font-weight: bolder;
+    text-decoration-line: overline;
+    
+}
+
+p
+{
+    font-size: 30px;
+    text-align: center;
+}

@@ -7,13 +7,13 @@
     <title>
         <%= title%>
     </title>
-    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link href="http://fonts.cdnfonts.com/css/harry-potter" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
     <head >
-        <h1 id="heading">TODO App</h1>
+        <h1 id="heading">Guide & Risk Assesment</h1>
     </head>
     <main>
         
@@ -70,16 +70,28 @@
                             <% let tick = i.selection ? "checked" : "" %>
                            
                             <input type="checkbox" class="custom-checkbox" onclick="toggle(`<%=i._id%>`,`<%=i.selection%>`);" name="selection" <%= tick%> >
-                            <div class="details">
-                                <p class="style-1"><%= i.desc%></p>
-                                <p class="style-3"><%= i.date%></p>
+                           
+                                <div class="details">
+                                    <p class="style-1"><%= i.desc.toUpperCase()%></p>
+                                    <p class="style-3"><%= i.date%></p>
+        
+                                </div>
     
-                            </div>
-                            <div class="details">
-
-                                <p class="style-2 bttn"><%= i.catagory%></p>
-                                
-                            </div>
+                                    <% if(i.catagory!=='0'){ %>
+                                    <div class="details down">
+                                        
+                                            <p class="bttn" ><%= i.catagory%></p>
+                                        
+                                        
+                                    </div>
+                                  <% } else{ %>  
+                                    <div class="details down">
+                                        
+                                    </div>
+                                    
+                                    <% } %>
+                            
+                            
                             <!-- <button type="submit" class="btn">
                                 <% let status = i.selection ? "Complete" : "" %>
                                 <%= status%>
@@ -104,5 +116,6 @@
         
     </main>
     <script src="/js/toggle.js"></script>
+    <script src="/js/colour_change.js"></script>
 </body>
 </html>
