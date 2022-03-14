@@ -46,7 +46,7 @@
                         DUE DATE
                     </div>
                     <div>
-                        <input type="date" name="date" id="due-date" required>
+                        <input type="date" name="date" id="due-date" min="2022-03-13" required>
                     </div>
                 </div>
             </div>
@@ -71,9 +71,9 @@
                            
                             <input type="checkbox" class="custom-checkbox" onclick="toggle(`<%=i._id%>`,`<%=i.selection%>`);" name="selection" <%= tick%> >
                             <div class="details">
-                                <p class="1"><%= i.desc%></p>
-                                <p class="2"><%= i.catagory%></p>
-                                <p class="3"><%= i.date%></p>
+                                <p class="style-1"><%= i.desc%></p>
+                                <p class="style-2"><%= i.catagory%></p>
+                                <p class="style-3"><%= i.date%></p>
     
                             </div>
                             <% let status = i.selection ? "Completed!" : "Incomplete" %>

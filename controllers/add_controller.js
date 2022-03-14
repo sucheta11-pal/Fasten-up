@@ -3,7 +3,7 @@ const Tasks = require('../models/todo');
 module.exports.addition = (req,res)=>{
     console.log('hello')
     console.log(req.body);
-    // return res.end('bvn');
+    
     Tasks.create({
         desc:req.body.desc,
         catagory:req.body.catagory,

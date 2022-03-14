@@ -10,7 +10,7 @@ const taskList = new mongoose.Schema({
     },
 
     date:{
-        type:Date,
+        type:String,
         required:true
     },
     selection:{
