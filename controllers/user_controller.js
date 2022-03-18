@@ -1,3 +1,6 @@
 module.exports.user = (req,res)=>{
-    res.end(`<h1>User</h1>`)
+    console.log('in usercontroller')
+    return res.render('user',{
+        title:'user'
+    })
 }

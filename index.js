@@ -4,13 +4,13 @@ const port = 5000;
 
 // Setting up view engine
 app.set('view engine','ejs');
-app.set('view','./views');
+app.set('views','./views');
 
 // use assets
 app.use(express.static('assets'))
 
 // use express router
-app.use('/',require('./routes/index'));
+app.use('/',require('./routes'));
 
 
 app.listen(port,(err)=>{
