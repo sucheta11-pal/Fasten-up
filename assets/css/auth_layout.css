@@ -1,4 +1,73 @@
+:root
+{
+    --green:#42662a;
+}
 body
 {
-    color: saddlebrown;
+    color: var(--green) ;
+    margin: 0;
+    
+}
+input
+{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+label
+{
+    font-weight: bolder;
+}
+.container
+{
+    border: 2px solid red;
+    width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-image: linear-gradient(to left,orange,yellow 75%);
+}
+.in-container
+{
+    border: 2px solid rgb(94, 255, 0);
+    display: flex;
+    justify-content: space-between;
+    margin: 5%;
+}
+#sign-img{
+    width: 40%;
+    height: 70vh;
+    border: 2px solid black;
+    box-sizing: border-box;
+    background-image: url('/images/pink-flowers.png');
+    background-position: center;
+    background-size: contain;
+}
+.box
+{
+    border: 3px solid blue;
+    width: 60%;
+}
+.item-1
+{
+    display: flex;
+    border: 2px solid red;
+    justify-content: space-around;
+}
+.heading
+{
+    text-align: center;
+}
+#fill-it
+{
+    /* border: 2px solid white; */
+    margin: auto;
+    padding: 5%;
+    width: 80%;
+}
+#fill-it div{
+    /* border: 2px solid red; */
+    width: 50%;
+    margin: auto;
 }
