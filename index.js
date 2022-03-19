@@ -3,6 +3,12 @@ const app = express();
 const port = 5000;
 const db = require('./config/mongoose')
 const expressLayouts = require('express-ejs-layouts');
+const cookieParser = require('cookie-parser');
+
+// adding middlewares
+
+app.use(express.urlencoded());
+app.use(cookieParser());
 
 app.use(expressLayouts);
 // extract styles and scripts from subpages into the layouts
