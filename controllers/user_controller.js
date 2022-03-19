@@ -4,3 +4,20 @@ module.exports.user = (req,res)=>{
         title:'user'
     })
 }
+
+module.exports.signUp = (req,res)=>{
+    
+    res.render('sign-up',{
+        title:'Sign-Up',
+        layout: 'auth_layout.ejs' 
+        
+    })
+}
+module.exports.signIn = (req,res)=>{
+    
+    res.render('sign-in',{
+        title:'Sign-In',
+        layout: 'auth_layout.ejs' 
+        
+    })
+}
