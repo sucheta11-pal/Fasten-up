@@ -4,7 +4,7 @@ module.exports.user = (req,res)=>{
         title:'user'
     })
 }
-
+// render sign-up page
 module.exports.signUp = (req,res)=>{
     
     res.render('sign-up',{
@@ -13,6 +13,7 @@ module.exports.signUp = (req,res)=>{
         
     })
 }
+// render sign in page
 module.exports.signIn = (req,res)=>{
     
     res.render('sign-in',{
@@ -20,4 +21,13 @@ module.exports.signIn = (req,res)=>{
         layout: 'auth_layout.ejs' 
         
     })
+}
+// get the sign up data
+module.exports.create = (req,res)=>{
+    // todo
+}
+
+// sign in and create session for the user
+module.exports.createSession = (req,res)=>{
+    // todo
 }

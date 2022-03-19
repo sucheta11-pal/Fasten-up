@@ -20,39 +20,49 @@ label
 }
 .container
 {
-    border: 2px solid red;
+    /* border: 2px solid red; */
     width: 90%;
+    border-top: black 4px solid;
+    border-right: black 4px solid;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    background-image: linear-gradient(to left,orange,yellow 75%);
+    box-sizing: border-box;
+    background-image: linear-gradient(to right top, #64c9eb 20% , #e460a2 50%,transparent 20%, transparent 20%);
 }
+
 .in-container
 {
-    border: 2px solid rgb(94, 255, 0);
+    /* border: 2px solid rgb(94, 255, 0); */
     display: flex;
     justify-content: space-between;
     margin: 5%;
+    box-sizing: border-box;
+
 }
 #sign-img{
     width: 40%;
     height: 70vh;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     box-sizing: border-box;
-    background-image: url('/images/pink-flowers.png');
+    background-image: url('/images/sign.png');
     background-position: center;
-    background-size: contain;
+    background-size:contain;
+    background-repeat: no-repeat;
+    
 }
 .box
 {
-    border: 3px solid blue;
+    /* border: 3px solid blue; */
     width: 60%;
+    box-sizing: border-box;
+
 }
 .item-1
 {
     display: flex;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     justify-content: space-around;
 }
 .heading
