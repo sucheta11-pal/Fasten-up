@@ -3,6 +3,7 @@ module.exports.home = function(req,res) {
     // changing cookie value as response sent from browser
     res.cookie('user_id',15)
     return res.render('home',{
-        title:'Home'
+        title:'Home',
+        layout:false
     })
 }
