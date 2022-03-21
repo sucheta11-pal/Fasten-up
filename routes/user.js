@@ -6,6 +6,7 @@ const userController = require('../controllers/user_controller');
 
 console.log('in user.js')
 router.get('/',userController.user)
+router.get('/profile',passport.checkAuthentication,userController.profile);
 // change to post later
 router.get('/sign-up',userController.signUp);
 router.get('/sign-in',userController.signIn);

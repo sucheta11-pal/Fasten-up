@@ -41,7 +41,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-
+app.use(passport.setAuthenticatedUser);
 
 // use assets
 app.use(express.static('./assets'))

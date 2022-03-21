@@ -6,9 +6,18 @@ module.exports.user = (req,res)=>{
         title:'user'
     })
 }
+module.exports.profile = (req,res)=>{
+    
+    return res.render('profile',{
+        title:'profile'
+    })
+}
 // render sign-up page
 module.exports.signUp = (req,res)=>{
-    
+    if(req.isAuthenticated())
+    {
+        return res.redirect('/user/profile');
+    }
     res.render('sign-up',{
         title:'Sign-Up',
         layout: 'auth_layout.ejs' 
@@ -18,6 +27,10 @@ module.exports.signUp = (req,res)=>{
 // render sign in page
 module.exports.signIn = (req,res)=>{
     
+    if(req.isAuthenticated())
+    {
+        return res.redirect('/user/profile');
+    }
     res.render('sign-in',{
         title:'Sign-In',
         layout: 'auth_layout.ejs' 
