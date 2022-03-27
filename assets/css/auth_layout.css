@@ -1,83 +1,79 @@
-:root
-{
-    --green:#42662a;
-}
-body
-{
-    color: var(--green) ;
-    margin: 0;
-    
-}
-input
-{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-label
-{
-    font-weight: bolder;
-}
-.container
-{
-    /* border: 2px solid red; */
-    width: 90%;
-    border-top: black 4px solid;
-    border-right: black 4px solid;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    box-sizing: border-box;
-    background-image: linear-gradient(to right top, #64c9eb 20% , #e460a2 50%,transparent 20%, transparent 20%);
+:root {
+  --green:#42662a;
 }
 
-.in-container
-{
-    /* border: 2px solid rgb(94, 255, 0); */
-    display: flex;
-    justify-content: space-between;
-    margin: 5%;
-    box-sizing: border-box;
+body {
+  color: var(--green);
+  margin: 0;
+}
 
+input {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
-#sign-img{
-    width: 40%;
-    height: 70vh;
-    /* border: 2px solid black; */
-    box-sizing: border-box;
-    background-image: url('/images/sign.png');
-    background-position: center;
-    background-size:contain;
-    background-repeat: no-repeat;
-    
-}
-.box
-{
-    /* border: 3px solid blue; */
-    width: 60%;
-    box-sizing: border-box;
 
+label {
+  font-weight: bolder;
 }
-.item-1
-{
-    display: flex;
-    /* border: 2px solid red; */
-    justify-content: space-around;
+
+.container {
+  /* border: 2px solid red; */
+  width: 90%;
+  border-top: black 4px solid;
+  border-right: black 4px solid;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  background-image: linear-gradient(to right top, #64c9eb 20%, #e460a2 50%, transparent 20%, transparent 20%);
 }
-.heading
-{
-    text-align: center;
+
+.in-container {
+  /* border: 2px solid rgb(94, 255, 0); */
+  display: flex;
+  justify-content: space-between;
+  margin: 5%;
+  box-sizing: border-box;
 }
-#fill-it
-{
-    /* border: 2px solid white; */
-    margin: auto;
-    padding: 5%;
-    width: 80%;
+
+#sign-img {
+  width: 40%;
+  height: 70vh;
+  /* border: 2px solid black; */
+  box-sizing: border-box;
+  background-image: url("/images/sign.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
-#fill-it div{
-    /* border: 2px solid red; */
-    width: 50%;
-    margin: auto;
+
+.box {
+  /* border: 3px solid blue; */
+  width: 60%;
+  box-sizing: border-box;
+}
+
+.item-1 {
+  display: flex;
+  /* border: 2px solid red; */
+  justify-content: space-around;
+}
+
+.heading {
+  text-align: center;
+}
+
+#fill-it {
+  /* border: 2px solid white; */
+  margin: auto;
+  padding: 5%;
+  width: 80%;
+}
+
+#fill-it div {
+  /* border: 2px solid red; */
+  width: 50%;
+  margin: auto;
 }
