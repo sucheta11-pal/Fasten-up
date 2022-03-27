@@ -1,12 +1,20 @@
-<h1>sucheta</h1>
-<h1>vnvb</h1>
-<h1>vnvb</h1>
-<h1>vnvb</h1>
-<h1>vnvb</h1>
-<h1>vnvb</h1>
-<h1>vnvb</h1>
-<h1>vnvb</h1>
-<h1>vnvb</h1>
-<h1>vnvb</h1>
-<h1>vnvb</h1>
-<h1>vnvb</h1>
+<h1>Welcome to Fasten-Up</h1>
+
+<section id="feed-posts">
+    <h4>Posts</h4>
+    <form action="/post/create-post" id="new-post-form" method="post">
+        <textarea name="content" cols="30" rows="3" placeholder="Add post" required></textarea>
+        <input type="submit" value="Post">
+    </form>
+</section>
+
+<section id="view-posts">
+    <ul>
+        <% for(let i of posts){%>
+            <li style="border: 2px solid palevioletred;">
+                <p><%=i.content%></p>
+                <p><%=i.user.name%></p>
+            </li>
+        <%}%>
+    </ul>
+</section>
