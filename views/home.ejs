@@ -1,5 +1,7 @@
 <h1>Welcome to Fasten-Up</h1>
-
+<!-- 1st check to avoid user from filling the form -->
+<!-- But if the user knows html and creates a form and send data annonymously so the 2nd check is put in the action route-->
+<%if(locals.user){%>
 <section id="feed-posts">
     <h4>Posts</h4>
     <form action="/post/create-post" id="new-post-form" method="post">
@@ -7,6 +9,7 @@
         <input type="submit" value="Post">
     </form>
 </section>
+<%}%>
 
 <section id="view-posts">
     <ul>
@@ -15,6 +18,33 @@
                 <p><%=i.content%></p>
                 <p><%=i.user.name%></p>
             </li>
+            <div class="post-comments">
+                <%if(locals.user){%>
+                    <form action="/comments/create" method="post">
+                        <input type="text" name="content" placeholder="Type your comment..." required> 
+                        <input type="hidden" name="post" value="<%=i._id%>">
+                        <input type="submit" value="Add comment">
+                    </form>
+                <%}%>
+            </div>
+            <div class="post-comments-list">
+                <ul id="post-comments-<%=i._id%>">
+                    <% for(let comment of i.comments){%>
+                    <li style="border: 2px solid black; background-color: pink;">
+                        <p>
+                            <%= comment.content%>
+                        </p>
+                        <p>
+                            <%= comment.user.name%> 
+                        </p>
+                        <p>
+                            <%=comment.user.email%>
+
+                        </p>
+                    </li>
+                    <%}%>
+                </ul>
+            </div>
         <%}%>
     </ul>
 </section>

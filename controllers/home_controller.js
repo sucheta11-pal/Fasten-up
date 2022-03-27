@@ -8,7 +8,17 @@ module.exports.home = function(req,res) {
 
 
     // Populate the user of each post
-    Post.find({}).populate('user').exec(
+    Post.find({})
+    .populate('user')
+    .populate({
+        // as written in model/post
+        path:'comments',
+        // going to every member of comments array and hetting their user
+        populate:{
+            path:'user'
+        }
+    })
+    .exec(
         (err,posts)=>{
                 if(err)
                 {
