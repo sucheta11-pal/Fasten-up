@@ -39,3 +39,60 @@ module.exports.comment = (req,res)=>{
 
     
 }
+
+module.exports.destroy = (req,res)=>{
+    Comment.findById(req.params.id,(err,comment)=>{
+        if(err)
+        {
+            console.log('Error in accessing comment');
+            return;
+        }
+
+        if(comment && comment.user==req.user.id)
+        {
+            // // Post.findById(req.params.post,(err,post)=>{
+            // Post.findById(comment.post,(err,post)=>{
+            //     if(err)
+            //     {
+            //         console.log('Cannot find the post to be deleted');
+            //         return;
+            //     }
+
+            //     for(let i = 0;i<post.comments.length;i++)
+            //     {
+            //         if(post.comments[i]==req.params.id)
+            //         {
+            //             post.comments.splice(i,1);
+            //             break;
+            //         }
+            //     }
+            //     post.save();
+            //     comment.remove();
+
+            //     return res.redirect('back');
+
+            // })
+
+
+             // Another way 
+             let postId = comment.post;
+             comment.remove();
+            // $pull it is clocely related to mongoDB syntax
+            // It throws the comment id from the array
+             Post.findByIdAndUpdate(postId,{$pull:{comments : req.params.id}},(err,post)=>{
+                if(err)
+                {
+                    console.log('Cannot find the post to be deleted');
+                    return;
+                }
+
+                return res.redirect('back');
+             })
+            
+        }
+
+        else{
+            return res.redirect('back');
+        }
+    })
+}

@@ -1,50 +1,76 @@
+<link rel="stylesheet" href="/css/home.css">
 <h1>Welcome to Fasten-Up</h1>
 <!-- 1st check to avoid user from filling the form -->
 <!-- But if the user knows html and creates a form and send data annonymously so the 2nd check is put in the action route-->
 <%if(locals.user){%>
-<section id="feed-posts">
-    <h4>Posts</h4>
-    <form action="/post/create-post" id="new-post-form" method="post">
-        <textarea name="content" cols="30" rows="3" placeholder="Add post" required></textarea>
-        <input type="submit" value="Post">
-    </form>
-</section>
-<%}%>
-
-<section id="view-posts">
-    <ul>
-        <% for(let i of posts){%>
-            <li style="border: 2px solid palevioletred;">
-                <p><%=i.content%></p>
-                <p><%=i.user.name%></p>
-            </li>
-            <div class="post-comments">
-                <%if(locals.user){%>
-                    <form action="/comments/create" method="post">
-                        <input type="text" name="content" placeholder="Type your comment..." required> 
-                        <input type="hidden" name="post" value="<%=i._id%>">
-                        <input type="submit" value="Add comment">
-                    </form>
-                <%}%>
-            </div>
-            <div class="post-comments-list">
-                <ul id="post-comments-<%=i._id%>">
-                    <% for(let comment of i.comments){%>
-                    <li style="border: 2px solid black; background-color: pink;">
-                        <p>
-                            <%= comment.content%>
-                        </p>
-                        <p>
-                            <%= comment.user.name%> 
-                        </p>
-                        <p>
-                            <%=comment.user.email%>
-
-                        </p>
-                    </li>
+    <section id="feed-posts">
+        <h4>Posts</h4>
+        <form action="/post/create-post" id="new-post-form" method="post">
+            <textarea name="content" cols="30" rows="3" placeholder="Add post" required></textarea>
+            <input type="submit" value="Post">
+        </form>
+    </section>
+    <%}%>
+<div id="home-container">
+        
+        <section id="view-posts">
+            <ul>
+                <% for(let i of posts){%>
+                    <% if(locals.user && (locals.user.id==i.user.id)){%>
+        
+                        <small>
+                            <a href="/post/destroy/<%=i.id%>">Delete Post</a>
+                        </small>
+                    
                     <%}%>
-                </ul>
-            </div>
-        <%}%>
-    </ul>
-</section>
+                    <li style="border: 2px solid palevioletred;">
+                        <p><%=i.content%></p>
+                        <p><%=i.user.name%></p>
+                    </li>
+                    <div class="post-comments">
+                        <%if(locals.user){%>
+                            <form action="/comments/create" method="post">
+                                <input type="text" name="content" placeholder="Type your comment..." required> 
+                                <input type="hidden" name="post" value="<%=i._id%>">
+                                <input type="submit" value="Add comment">
+                            </form>
+                        <%}%>
+                    </div>
+                    <div class="post-comments-list">
+                        <ul id="post-comments-<%=i._id%>">
+                            <% for(let comment of i.comments){%>
+                                <li style="border: 2px solid black; background-color: pink;">
+                                    <% if(locals.user && (locals.user.id==comment.user.id)){%>
+                                
+                                        <small>
+                                            <a href="/comments/destroy/<%=comment.id%>/<%=i.id%>">Delete Comment</a>
+                                        </small>
+                                
+                                    <%}%>
+                                    <p>
+                                        <%= comment.content%>
+                                    </p>
+                                    <p>
+                                        <%= comment.user.name%> 
+                                    </p>
+                                    <p>
+                                        <%=comment.user.email%>
+                                
+                                    </p>
+                                </li>
+                            <%}%>
+                        </ul>
+                    </div>
+                <%}%>
+            </ul>
+        </section>
+        
+        <section id="user-friends">
+            <h4>Friends</h4>
+            <% for(u of all_users){%>
+                <p>
+                    <a href="/user/profile/<%=u.id%>"><%=u.name%></a>
+                </p>
+            <%}%>
+        </section>
+</div>

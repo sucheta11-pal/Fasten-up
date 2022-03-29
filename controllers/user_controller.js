@@ -6,11 +6,35 @@ module.exports.user = (req,res)=>{
         title:'user'
     })
 }
-module.exports.profile = (req,res)=>{
+// module.exports.my_profile = (req,res)=>{
     
-    return res.render('profile',{
-        title:'profile'
+//         return res.render('profile',{
+//             title:'profile',
+//             profile_user:req.user
+//         })    
+// }
+module.exports.profile = (req,res)=>{
+    User.findById(req.params.id,(err,user)=>{
+        return res.render('profile',{
+            title:'profile',
+            profile_user:user
+        })
     })
+    
+}
+
+module.exports.update = (req,res)=>{
+    if(req.user.id==req.params.id)
+    {
+        User.findByIdAndUpdate(req.params.id,req.body,(err,user)=>{
+            return res.redirect('back');
+        })
+    }
+
+    else
+    {
+        return res.status(401).send('Unauthorized');
+    }
 }
 // render sign-up page
 module.exports.signUp = (req,res)=>{
