@@ -15,52 +15,8 @@
         
         <section id="view-posts">
             <ul>
-                <% for(let i of posts){%>
-                    <% if(locals.user && (locals.user.id==i.user.id)){%>
-        
-                        <small>
-                            <a href="/post/destroy/<%=i.id%>">Delete Post</a>
-                        </small>
-                    
-                    <%}%>
-                    <li style="border: 2px solid palevioletred;">
-                        <p><%=i.content%></p>
-                        <p><%=i.user.name%></p>
-                    </li>
-                    <div class="post-comments">
-                        <%if(locals.user){%>
-                            <form action="/comments/create" method="post">
-                                <input type="text" name="content" placeholder="Type your comment..." required> 
-                                <input type="hidden" name="post" value="<%=i._id%>">
-                                <input type="submit" value="Add comment">
-                            </form>
-                        <%}%>
-                    </div>
-                    <div class="post-comments-list">
-                        <ul id="post-comments-<%=i._id%>">
-                            <% for(let comment of i.comments){%>
-                                <li style="border: 2px solid black; background-color: pink;">
-                                    <% if(locals.user && (locals.user.id==comment.user.id)){%>
-                                
-                                        <small>
-                                            <a href="/comments/destroy/<%=comment.id%>/<%=i.id%>">Delete Comment</a>
-                                        </small>
-                                
-                                    <%}%>
-                                    <p>
-                                        <%= comment.content%>
-                                    </p>
-                                    <p>
-                                        <%= comment.user.name%> 
-                                    </p>
-                                    <p>
-                                        <%=comment.user.email%>
-                                
-                                    </p>
-                                </li>
-                            <%}%>
-                        </ul>
-                    </div>
+                <% for(i of posts){%>
+                    <%- include('_post') -%>
                 <%}%>
             </ul>
         </section>
@@ -74,3 +30,4 @@
             <%}%>
         </section>
 </div>
+<script src="/js/home_post.js"></script>

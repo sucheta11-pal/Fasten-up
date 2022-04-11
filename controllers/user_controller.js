@@ -13,13 +13,19 @@ module.exports.user = (req,res)=>{
 //             profile_user:req.user
 //         })    
 // }
-module.exports.profile = (req,res)=>{
-    User.findById(req.params.id,(err,user)=>{
+module.exports.profile = async (req,res)=>{
+    let user = await User.findById(req.params.id,);
         return res.render('profile',{
             title:'profile',
             profile_user:user
         })
-    })
+   
+    // User.findById(req.params.id,(err,user)=>{
+    //     return res.render('profile',{
+    //         title:'profile',
+    //         profile_user:user
+    //     })
+    // })
     
 }
 
@@ -27,12 +33,14 @@ module.exports.update = (req,res)=>{
     if(req.user.id==req.params.id)
     {
         User.findByIdAndUpdate(req.params.id,req.body,(err,user)=>{
+            req.flash('success','Profile updated');
             return res.redirect('back');
         })
     }
 
     else
     {
+        req.flash('error','Unauthorized');
         return res.status(401).send('Unauthorized');
     }
 }
@@ -98,12 +106,14 @@ module.exports.create = (req,res)=>{
 
 // sign in and create session for the user
 module.exports.createSession = (req,res)=>{
+    req.flash('success','Logged in successfully');
     return res.redirect('/');
 }
 
 // Destroying the session
 module.exports.destroySession = (req,res)=>{
     req.logout();
+    req.flash('success','Logged out successfully!');
     return res.redirect('/')
 }
 

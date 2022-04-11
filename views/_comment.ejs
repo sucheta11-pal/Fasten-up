@@ -1,0 +1,19 @@
+<li style="border: 2px solid black; background-color: pink;">
+    <% if(locals.user && (locals.user.id==comment.user.id)){%>
+
+        <small>
+            <a href="/comments/destroy/<%=comment.id%>/<%=i.id%>">Delete Comment</a>
+        </small>
+
+    <%}%>
+    <p>
+        <%= comment.content%>
+    </p>
+    <p>
+        <%= comment.user.name%> 
+    </p>
+    <p>
+        <%=comment.user.email%>
+
+    </p>
+</li>
