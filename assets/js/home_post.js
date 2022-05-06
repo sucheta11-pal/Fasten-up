@@ -10,7 +10,7 @@
             // e is the event which we are going to disable
             
             e.preventDefault();
-
+            loopFunction();
             $.ajax({
                 type:'post',
                 url:'/post/create-post',
@@ -22,7 +22,7 @@
                     let newPost = newPostDom(data.data.post);
                     
                     $('#view-posts>ul').prepend(newPost);
-
+                    // del class inside newpost
                     deletePost($(' .del-post-btn',newPost));
 
                     message('Post created successfully')
@@ -67,6 +67,7 @@
     let deletePost = function(deleteLink)
     {
         $(deleteLink).click(function(e){
+            console.log(e);
             e.preventDefault();
 
             $.ajax({
@@ -92,6 +93,14 @@
             layout:'topRight',
             timeout:1500
             }).show();
+    }
+
+    let loopFunction = function()
+    {
+        let listItems = $('#view-posts>ul>li');
+        listItems.each(function(){
+            console.log($('#view-posts>ul>li'));
+        })
     }
     createPost();
 }

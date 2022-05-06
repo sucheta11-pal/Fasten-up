@@ -9,7 +9,7 @@ module.exports.post = async (req,res)=>{
             user:req.user._id
         })
         // xml/http req
-
+        console.log(post)
         post = await post.populate('user');
         if(req.xhr)
         {

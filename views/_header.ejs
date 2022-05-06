@@ -31,18 +31,18 @@
             <ul class=" navbar-nav ms-auto text-center align-items-center">
                 <% if(locals.user){%>
                     <li class="nav-item mx-2">
-                        <a href="/user/profile" class="nav-link bttn btn"><%=user.name%></a>
+                        <a href="/users/profile" class="nav-link bttn btn"><%=user.name%></a>
                     </li>
                     <li class="nav-item me-3">
-                        <a class="nav-link bttn btn" href="/user/sign-out">Sign Out</a>
+                        <a class="nav-link bttn btn" href="/users/sign-out">Sign Out</a>
                     </li>
         
                 <% }else{%>
                     <li class="nav-item mx-2">
-                        <a class="nav-link active bttn btn" aria-current="page" href="/user/sign-up">Sign up</a>
+                        <a class="nav-link active bttn btn" aria-current="page" href="/users/sign-up">Sign up</a>
                     </li>
                     <li class="nav-item me-3">
-                        <a class="nav-link bttn btn" href="/user/sign-in">Sign In</a>
+                        <a class="nav-link bttn btn" href="/users/sign-in">Sign In</a>
                     </li>
         
                 <%}%>

@@ -1,4 +1,6 @@
 const User = require('../models/user')
+const fs = require('fs')
+const path = require('path')
 
 module.exports.user = (req,res)=>{
     console.log('in usercontroller')
@@ -29,13 +31,37 @@ module.exports.profile = async (req,res)=>{
     
 }
 
-module.exports.update = (req,res)=>{
+module.exports.update = async (req,res)=>{
     if(req.user.id==req.params.id)
     {
-        User.findByIdAndUpdate(req.params.id,req.body,(err,user)=>{
-            req.flash('success','Profile updated');
+        try {
+           let user = await User.findById(req.params.id)
+            User.uploadedAvatar(req,res,(err)=>{
+                if(err)
+                {
+                    console.log("Multer error");
+                    return;
+                }
+                user.name = req.body.name
+                user.email = req.body.email
+                console.log(req.file)
+                if(req.file)
+                {
+                    if(user.avatar)
+                    {
+                        fs.unlinkSync(path.join(__dirname,'..',user.avatar));
+                    }
+                    user.avatar = User.avatarPath + '/' + req.file.filename
+                }
+
+                user.save();
+                return res.redirect('back');
+            })    
+        } catch (error) {
+            
+
             return res.redirect('back');
-        })
+        }
     }
 
     else

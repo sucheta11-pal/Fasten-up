@@ -6,6 +6,10 @@ const db = require('./config/mongoose')
 const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
+
+const passport_JWT = require('./config/paasport-jwt-strategy')
+
+const passport_Google = require('./config/passport-google-oauth2-strategy')
 const MongoStore = require('connect-mongo');
 
 const sassMiddleware = require('node-sass-middleware');
@@ -77,6 +81,11 @@ app.use(express.static('./assets'))
 
 // use express router
 app.use('/',require('./routes/index'));
+
+
+
+// Make the uploads path available
+app.use('/uploads',express.static(__dirname + '/uploads'))
 
 
 app.listen(port,(err)=>{
